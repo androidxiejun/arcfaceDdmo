@@ -1,1 +1,1 @@
-include ':app', ':testleakcanary', ':testproxy', ':testarcface'
+include ':app', ':testleakcanary', ':testproxy', ':testarcface', ':testlayout', ':testinject', ':testbaserecyclerview'

@@ -78,8 +78,8 @@ public class ArcHelper {
                  * 活体检测只支持一个人脸，所以只保留最大的人脸
                  * 若需要多人脸搜索，删除此行代码，并且关闭活体判断
                  */
-            TrackUtil.keepMaxFace(faceInfoList);
-            refreshTrackId(faceInfoList);
+//            TrackUtil.keepMaxFace(faceInfoList);
+//            refreshTrackId(faceInfoList);
 
             code = faceEngine.process(nv21, size.width, size.height, FaceEngine.CP_PAF_NV21, faceInfoList, FaceEngine.ASF_LIVENESS);
             Log.d(MainActivity.TAG, "分析人脸特征--2---=====" + code);
@@ -87,18 +87,18 @@ public class ArcHelper {
                 return null;
             }
 
-            code = faceEngine.getLiveness(livenessInfoList);
-            Log.d(MainActivity.TAG, "分析人脸特征--3---=====" + code);
-            if (code != ErrorInfo.MOK) {
-                return null;
-            }
+//            code = faceEngine.getLiveness(livenessInfoList);
+//            Log.d(MainActivity.TAG, "分析人脸特征--3---=====" + code);
+//            if (code != ErrorInfo.MOK) {
+//                return null;
+//            }
 
             facePreviewInfoList.clear();
-            if (livenessInfoList.size() == faceInfoList.size()) {
-                for (int i = 0; i < faceInfoList.size(); i++) {
-                    facePreviewInfoList.add(new FacePreviewInfo(faceInfoList.get(i), livenessInfoList.get(i), currentTrackIdList.get(i)));
-                }
+//            if (livenessInfoList.size() == faceInfoList.size()) {
+            for (int i = 0; i < faceInfoList.size(); i++) {
+                facePreviewInfoList.add(new FacePreviewInfo(faceInfoList.get(i), null, 0));
             }
+//            }
             Log.d(MainActivity.TAG, "人脸的数量-------" + facePreviewInfoList.size());
             return facePreviewInfoList;
         }

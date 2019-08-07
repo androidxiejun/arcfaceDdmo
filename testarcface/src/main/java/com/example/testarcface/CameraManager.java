@@ -91,13 +91,13 @@ public class CameraManager implements SurfaceHolder.Callback {
             mCamera.setPreviewCallback(new Camera.PreviewCallback() {
                 @Override
                 public void onPreviewFrame(byte[] data, Camera camera) {
-//                    Log.d(MainActivity.TAG, "像素数据---------" + Arrays.toString(data));
+                    Log.d(MainActivity.TAG, "像素数据---------" + Arrays.toString(data));
                     mListenner.onPreview(data, camera);
                 }
             });
             mCamera.startPreview();
 
-            mListenner.onCameraOpened(mCamera, mCameraId, mDegress, false);
+            mListenner.onCameraOpened(mCamera, mCameraId, mDegress, true);
 
         } catch (IOException e) {
             e.printStackTrace();

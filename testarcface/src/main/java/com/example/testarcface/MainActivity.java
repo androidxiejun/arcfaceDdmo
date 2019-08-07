@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        activeEngine();
-        initEngine();
         initCamera();
-//        faceEngine();
+        activeEngine();
+//        initEngine();
+        faceEngine();
     }
 
     private void initCamera() {
@@ -71,44 +71,44 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPreview(byte[] nv21, Camera camera) {
-                ArcHelper.getInstance().setEngine(faceEngine);
-
-                ArcHelper.getInstance().onPreviewFrame(nv21, previewSize);
-
-//                Log.d(TAG, "预览返回的数据---------" + Arrays.toString(nv21));
-
-//                List<FaceInfo> faceInfoList = new ArrayList<>();
-//                int code = faceEngine.detectFaces(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList);
-//                if (code == ErrorInfo.MOK && faceInfoList.size() > 0) {
-//                    code = faceEngine.process(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList, processMask);
-//                    if (code != ErrorInfo.MOK) {
-//                        return;
-//                    }
-//                } else {
-//                    return;
-//                }
+                Log.d(TAG, "返回的像素数据------" + Arrays.toString(nv21));
+//                ArcHelper.getInstance().setEngine(faceEngine);
 //
-//                List<AgeInfo> ageInfoList = new ArrayList<>();
-//                List<GenderInfo> genderInfoList = new ArrayList<>();
-//                List<Face3DAngle> face3DAngleList = new ArrayList<>();
-//                List<LivenessInfo> faceLivenessInfoList = new ArrayList<>();
-//                int ageCode = faceEngine.getAge(ageInfoList);
-//                int genderCode = faceEngine.getGender(genderInfoList);
-//                int face3DAngleCode = faceEngine.getFace3DAngle(face3DAngleList);
-//                int livenessCode = faceEngine.getLiveness(faceLivenessInfoList);
-//
-//                //有其中一个的错误码不为0，return
-//                if ((ageCode | genderCode | face3DAngleCode | livenessCode) != ErrorInfo.MOK) {
-//                    return;
-//                }
-//
-//                if (mFaceRectView != null && drawHelper != null) {
-//                    List<DrawInfo> drawInfoList = new ArrayList<>();
-//                    for (int i = 0; i < faceInfoList.size(); i++) {
-//                        drawInfoList.add(new DrawInfo(drawHelper.adjustRect(faceInfoList.get(i).getRect()), genderInfoList.get(i).getGender(), ageInfoList.get(i).getAge(), faceLivenessInfoList.get(i).getLiveness(), null));
-//                    }
-//                    drawHelper.draw(mFaceRectView, drawInfoList);
-//                }
+//                ArcHelper.getInstance().onPreviewFrame(nv21, previewSize);
+
+
+                List<FaceInfo> faceInfoList = new ArrayList<>();
+                int code = faceEngine.detectFaces(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList);
+                if (code == ErrorInfo.MOK && faceInfoList.size() > 0) {
+                    code = faceEngine.process(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList, processMask);
+                    if (code != ErrorInfo.MOK) {
+                        return;
+                    }
+                } else {
+                    return;
+                }
+
+                List<AgeInfo> ageInfoList = new ArrayList<>();
+                List<GenderInfo> genderInfoList = new ArrayList<>();
+                List<Face3DAngle> face3DAngleList = new ArrayList<>();
+                List<LivenessInfo> faceLivenessInfoList = new ArrayList<>();
+                int ageCode = faceEngine.getAge(ageInfoList);
+                int genderCode = faceEngine.getGender(genderInfoList);
+                int face3DAngleCode = faceEngine.getFace3DAngle(face3DAngleList);
+                int livenessCode = faceEngine.getLiveness(faceLivenessInfoList);
+
+                //有其中一个的错误码不为0，return
+                if ((ageCode | genderCode | face3DAngleCode | livenessCode) != ErrorInfo.MOK) {
+                    return;
+                }
+
+                if (mFaceRectView != null && drawHelper != null) {
+                    List<DrawInfo> drawInfoList = new ArrayList<>();
+                    for (int i = 0; i < faceInfoList.size(); i++) {
+                        drawInfoList.add(new DrawInfo(drawHelper.adjustRect(faceInfoList.get(i).getRect()), genderInfoList.get(i).getGender(), ageInfoList.get(i).getAge(), faceLivenessInfoList.get(i).getLiveness(), null));
+                    }
+                    drawHelper.draw(mFaceRectView, drawInfoList);
+                }
 
 
             }

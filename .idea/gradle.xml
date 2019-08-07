@@ -10,6 +10,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/testarcface" />
+            <option value="$PROJECT_DIR$/testbaserecyclerview" />
+            <option value="$PROJECT_DIR$/testinject" />
+            <option value="$PROJECT_DIR$/testlayout" />
             <option value="$PROJECT_DIR$/testleakcanary" />
             <option value="$PROJECT_DIR$/testproxy" />
           </set>
