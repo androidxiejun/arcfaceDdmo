@@ -1,5 +1,6 @@
 package com.example.testfuturetask;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
     @Override

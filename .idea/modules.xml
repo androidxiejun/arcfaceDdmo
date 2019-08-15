@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/testarcface/testarcface.iml" filepath="$PROJECT_DIR$/testarcface/testarcface.iml" />
       <module fileurl="file://$PROJECT_DIR$/testbaserecyclerview/testbaserecyclerview.iml" filepath="$PROJECT_DIR$/testbaserecyclerview/testbaserecyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testbuilder/testbuilder.iml" filepath="$PROJECT_DIR$/testbuilder/testbuilder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testfactory/testfactory.iml" filepath="$PROJECT_DIR$/testfactory/testfactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/testfuturetask/testfuturetask.iml" filepath="$PROJECT_DIR$/testfuturetask/testfuturetask.iml" />
       <module fileurl="file://$PROJECT_DIR$/testinject/testinject.iml" filepath="$PROJECT_DIR$/testinject/testinject.iml" />
       <module fileurl="file://$PROJECT_DIR$/testlayout/testlayout.iml" filepath="$PROJECT_DIR$/testlayout/testlayout.iml" />
