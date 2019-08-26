@@ -1,1 +1,1 @@
-include ':app', ':testleakcanary', ':testproxy', ':testarcface', ':testlayout', ':testinject', ':testbaserecyclerview', ':testliteorm', ':testfuturetask', ':testfactory', ':testbuilder'
+include ':app', ':testleakcanary', ':testproxy', ':testarcface', ':testlayout', ':testinject', ':testbaserecyclerview', ':testliteorm', ':testfuturetask', ':testfactory', ':testbuilder', ':testwsocket', ':testjavatoapi', ':testdaoupgrade', ':testlogger'
